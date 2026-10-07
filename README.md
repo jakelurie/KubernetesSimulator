@@ -35,4 +35,6 @@ Reproduce: capture → disaster → wait for faults-observed → restore → wai
 
 No AI is called by this app at runtime and no AI dependency registration is needed. Your existing BootstrapKubernetes RCA tool retains its own model configuration and credentials. Never put Kubernetes or provider credentials in browser code.
 
+Automated integration check: `npm test` runs the controller tests and checks browser JavaScript syntax. Harness Push discovers this command through `package.json`. It requires Python 3.9+ and Node.js/npm, needs no installed packages or running server, and uses temporary simulated state without accessing Kubernetes.
+
 Browser verification: `npm install --no-save --package-lock=false playwright`, then `node tests/browser.cjs` against the running demo. It exercises all three modes, reset, a visible validation failure, mutation CSRF protection and mobile layout. If Chromium is unavailable, run `npx playwright install chromium`.

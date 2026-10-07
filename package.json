@@ -1,0 +1,8 @@
+{
+  "name": "kubernetes-state-controller",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "python3 -m unittest discover -s tests -v && node --check static/app.js"
+  }
+}
